@@ -1,3 +1,12 @@
 title: My Art Portfolio
 description: A collection of my original artworks and prints
-theme: jekyll-theme-modernist
+theme: jekyll-theme-minimal
+
+# Add navigation menu
+nav:
+  - title: "Home"
+    url: /
+  - title: "Artwork"
+    url: /artworks
+  - title: "Contact"
+    url: /contact
