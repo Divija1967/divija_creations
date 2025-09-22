@@ -1,33 +1,15 @@
-/* Ensure nav doesn't overlap on large screens */
-@media screen and (min-width: 966px) {
-  nav {
-    float: right;
-    margin-top: -40px; /* adjust if needed so it aligns nicely */
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-}
-
-/* Navbar spacing */
-nav {
-  margin-top: 15px;
-  margin-bottom: 20px;
-}
-
-/* Navbar links */
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
-  gap: 20px;
+  gap: 1rem;
 }
 
 nav a {
   text-decoration: none;
-  font-weight: bold;
   color: #333;
+  font-weight: 600;
 }
 
 nav a:hover {
