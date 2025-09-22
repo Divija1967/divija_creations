@@ -1,3 +1,15 @@
+/* Ensure nav doesn't overlap on large screens */
+@media screen and (min-width: 966px) {
+  nav {
+    float: right;
+    margin-top: -40px; /* adjust if needed so it aligns nicely */
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+}
+
 /* Navbar spacing */
 nav {
   margin-top: 15px;
