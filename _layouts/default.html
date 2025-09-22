@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>{{ page.title }} | {{ site.title }}</title>
+
     <!-- Minimal theme’s default stylesheet -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
@@ -11,12 +12,26 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
-        <p>{{ site.description }}</p>
-      </header>
 
-      {% include navbar.html %}
+      <!-- Sticky header with nav -->
+      <header>
+        <div class="site-info">
+          <h1><a href="{{ "/" | relative_url }}">{{ site.title }}</a></h1>
+          <p>{{ site.description }}</p>
+        </div>
+
+        <!-- Hamburger button (shows on mobile) -->
+        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+
+        <!-- Navigation menu -->
+        <nav>
+          <ul>
+            {% for item in site.nav %}
+              <li><a href="{{ item.link | relative_url }}">{{ item.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </header>
 
       <main>
         {{ content }}
@@ -26,5 +41,8 @@
         <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
       </footer>
     </div>
+
+    <!-- Script for toggling nav -->
+    <script src="{{ '/assets/js/nav.js' | relative_url }}"></script>
   </body>
 </html>
