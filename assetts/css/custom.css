@@ -1,10 +1,10 @@
-/* Space between site title and navbar */
+/* Navbar spacing */
 nav {
   margin-top: 15px;
   margin-bottom: 20px;
 }
 
-/* Navbar links horizontal */
+/* Navbar links */
 nav ul {
   list-style: none;
   padding: 0;
@@ -12,7 +12,6 @@ nav ul {
   gap: 20px;
 }
 
-/* Make links look nicer */
 nav a {
   text-decoration: none;
   font-weight: bold;
