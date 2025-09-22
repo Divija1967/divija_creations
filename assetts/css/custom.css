@@ -1,9 +1,43 @@
+/* Sticky header layout */
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+/* Title + description container */
+.site-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.site-info h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.site-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Nav list */
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -14,4 +48,45 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
+}
+
+/* Hamburger button */
+.nav-toggle {
+  display: none; /* hidden on desktop */
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* push it to the right */
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: nowrap; /* keep header in one line */
+  }
+
+  nav {
+    display: none; /* hide menu initially */
+    position: absolute;
+    top: 60px; /* adjust based on header height */
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-toggle {
+    display: block; /* show hamburger */
+  }
+
+  nav.show {
+    display: block; /* show when toggled */
+  }
 }
